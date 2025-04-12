@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     const form = document.createElement("form");
     form.className = "my-form";
-    form.dataset.user_id = user.id;
+    form.dataset.user = user.id;
 
     // const hiddenInput = document.createElement("input");
     // hiddenInput.setAttribute("type", "hidden");
@@ -60,29 +60,29 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     weightBox.appendChild(formDiv);
   });
-});
 
-document.querySelectorAll(".my-form").forEach((form) => {
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // 🚫 Stop default page reload
+  document.querySelectorAll(".my-form").forEach((form) => {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // 🚫 Stop default page reload
 
-    const formData = new FormData(form);
-    formData.append("user_id", form.dataset.user_id); // add user_id manually
+      const formData = new FormData(form);
+      formData.append("user_id", form.dataset.user); // add user_id manually
 
-    // alert(formData);
+      // alert(formData);
 
-    fetch("./server/insertWeight.php", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.text())
-      .then((result) => {
-        console.log(result); // You can show this in the UI too
-        alert("Submitted successfully!");
+      fetch("http://sed-smarthome.ir/weight/server/insertWeight.php", {
+        method: "POST",
+        body: formData,
       })
-      .catch((error) => {
-        console.error("Error:", error);
-        alert("Something went wrong.");
-      });
+        .then((response) => response.text())
+        .then((result) => {
+          console.log(result); // You can show this in the UI too
+          alert("Submitted successfully!");
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("Something went wrong.");
+        });
+    });
   });
 });
