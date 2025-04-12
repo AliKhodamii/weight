@@ -4,9 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weight Tracker</title>
+    <link rel="stylesheet" href="./public/style/style.css" />
   </head>
   <body>
-    <div class="container" id="container"></div>
+    <div class="container" id="container">
+      <div class="weight-box">
+        <h1>علی</h1>
+        <div class="chart"></div>
+        <div class="form">
+          <form action="">
+            <label for="wieght">وزن به کیلوگرم</label>
+            <input type="number" step="0.01" id="weight" min="80" max="120" />
+            <button flag="1">ثبت</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
-  <script src="./public/logic.js"></script>
+  <script src="./public/logic/logic.js"></script>
 </html>

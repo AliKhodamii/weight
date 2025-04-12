@@ -1,0 +1,49 @@
+@media screen and (min-width: 400px) {
+  body {
+    width: 400px;
+    margin: auto;
+  }
+}
+@font-face {
+  font-family: yekan;
+  src: url(../fonts/Yekan.ttf);
+}
+
+* {
+  direction: rtl;
+  color: #2f3e46;
+  font-family: yekan;
+  border-radius: 0.3em;
+}
+
+body {
+  background-color: #feffff;
+}
+input {
+  width: 7em;
+}
+input,
+label,
+button {
+  margin: 0.5em;
+}
+button {
+  padding: 0 2em;
+  background-color: #2ecc71;
+}
+h1 {
+  margin-right: 0.5em;
+}
+
+.weight-box {
+  background-color: #def2f1;
+  margin: 1em;
+}
+.chart {
+  margin: 1em;
+  padding: 3em;
+}
+.form {
+  margin: 1em;
+  text-align: center;
+}
