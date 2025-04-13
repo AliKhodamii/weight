@@ -40,9 +40,14 @@ h1 {
   margin: 1em;
 }
 .chart {
-  margin: 1em;
-  padding: 3em;
+  /* margin: 1em;
+  padding: 3em; */
 }
+.my-chart {
+  height: 15em;
+  width: 368px;
+}
+
 .form {
   margin: 1em;
   text-align: center;
