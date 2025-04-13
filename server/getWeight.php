@@ -1,5 +1,5 @@
 <?php
-// require_once('./lib/jdatetime.class.php');
+require_once('./jdatetime.class.php');
 
 $hostname = 'localhost:3306';
 $username = 'jjqioyps_user';
@@ -42,8 +42,8 @@ if ($result->num_rows > 0) {
         $userId = $row["user_id"];
         $dataByUser[$userId][] = $row;
 
-        $userAvgWeight[$userId][] = $row['avg_weight'];
-        $userEntryDate[$userId][] = date('Y-m-d', strtotime($row['entry_date']));
+        $userAvgWeight[$userId - 1][] = $row['avg_weight'];
+        $userEntryDate[$userId - 1][] = (new jDateTime(false, true))->convertFormatToFormat('m/d', 'Y-m-d H:i:s', $row["entry_date"]);
     }
 }
 
