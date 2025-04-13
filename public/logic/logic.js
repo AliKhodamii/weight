@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   const container = document.getElementById("container");
 
-  const names = { Ali: "علی", Erfan: "عرفان" };
+  const names = { Ali: "علی", Erfan: "عرفان", Zohre: "زهره" };
 
   users.forEach((user) => {
     // create weightBox div
