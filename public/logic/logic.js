@@ -78,8 +78,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         scales: {
           y: {
             beginAtZero: false, // Start Y-axis at the minimum value
-            min: 60, // Set the minimum value for the Y-axis
-            max: 120,
+            min: Math.min(...chartWeights[user.id - 1]) - 10, // Set the minimum value for the Y-axis
+            max: Math.max(...chartWeights[user.id - 1]) + 10,
           },
         },
       },
@@ -108,6 +108,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     input.setAttribute("step", "0.01");
     input.setAttribute("max", "130");
     input.setAttribute("min", "70");
+    input.required = true;
 
     const button = document.createElement("button");
     button.textContent = "ثبت";
