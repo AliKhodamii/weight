@@ -5,7 +5,7 @@ chartWeights = [];
 function getWeights() {
   return new Promise((resolve, reject) => {
     const http = new XMLHttpRequest();
-    const url = "http://sed-smarthome.ir/weight/server/getWeight.php";
+    const url = "./server/getWeight.php";
     http.open("GET", url);
     http.send();
 
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       // alert(formData);
 
-      fetch("http://sed-smarthome.ir/weight/server/insertWeight.php", {
+      fetch("server/insertWeight.php", {
         method: "POST",
         body: formData,
       })
